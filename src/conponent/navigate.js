@@ -2,7 +2,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { Link } from 'react-router-dom';
 import LoginButton from './loginButton';
 import LogoutButton from './logoutButton';
-import { postUser, getUsers } from '../apiCall';
+import { postUser } from '../apiCall';
 
 const Navigate = () => {
   const { isAuthenticated, user, getAccessTokenSilently } = useAuth0();
@@ -13,8 +13,6 @@ const Navigate = () => {
     };
     getAccessTokenSilently().then((accessToken) => {
       postUser(userData, accessToken);
-      getUsers();
-      console.log(getUsers());
     });
   }
   return isAuthenticated ? (
