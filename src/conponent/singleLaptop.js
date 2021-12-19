@@ -9,11 +9,8 @@ import ReviewCard from './reviewCard';
 
 const SingleDetail = () => {
   const { isAuthenticated, user, getAccessTokenSilently } = useAuth0();
-  console.log(user, 'user');
   const [laptopReviews, setLaptopReviews] = useState('');
-  console.log(laptopReviews);
   const { details } = useSelector((state) => state);
-  console.log(details);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [rating, setRating] = useState('1');
