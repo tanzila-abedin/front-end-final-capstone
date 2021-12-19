@@ -3,6 +3,8 @@ import {
   FETCH_LAPTOPS, FETCH_LAPTOP_DETAIL,
 } from './type';
 
+const host = 'https://devlaps-backend.herokuapp.com';
+
 const fetchLaptops = (laptops) => ({
   type: FETCH_LAPTOPS,
   payload: laptops,
@@ -14,9 +16,8 @@ const fetchLaptopDetail = (laptop) => ({
 });
 
 const fetchLaptopApi = () => async (dispatch) => {
-  const laptopUrl = 'http://localhost:3000/laptops';
   try {
-    const response = await axios.get(laptopUrl);
+    const response = await axios.get(host);
     const users = response.data;
     dispatch(fetchLaptops(users));
   } catch (error) {
@@ -25,7 +26,7 @@ const fetchLaptopApi = () => async (dispatch) => {
 };
 
 const fetchDetailApi = (id) => async (dispatch) => {
-  const laptopUrl = `http://localhost:3000/laptops/${id}`;
+  const laptopUrl = `${host}/laptops/${id}`;
   try {
     const response = await axios.get(laptopUrl);
     const laptopDetail = response.data;
