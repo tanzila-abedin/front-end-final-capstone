@@ -55,3 +55,16 @@ export const deleteReviews = async (accessToken, id) => {
   const laptopReviews = await response.json();
   return laptopReviews;
 };
+
+export const getUserReviews = async (accessToken, data) => {
+  const response = await fetch(reviewsEndpoint, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      authorization: `Bearer ${accessToken}`,
+      body: data,
+    },
+  });
+  const userReviews = await response.json();
+  return userReviews;
+};
