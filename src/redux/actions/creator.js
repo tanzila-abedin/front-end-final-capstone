@@ -4,6 +4,7 @@ import {
 } from './type';
 
 const host = 'https://devlaps-backend.herokuapp.com';
+// const host = 'http://localhost:3000'
 
 const fetchLaptops = (laptops) => ({
   type: FETCH_LAPTOPS,
@@ -16,8 +17,9 @@ const fetchLaptopDetail = (laptop) => ({
 });
 
 const fetchLaptopApi = () => async (dispatch) => {
+  const laptopUrl = `${host}/laptops`;
   try {
-    const response = await axios.get(host);
+    const response = await axios.get(laptopUrl);
     const users = response.data;
     dispatch(fetchLaptops(users));
   } catch (error) {
