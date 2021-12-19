@@ -4,9 +4,9 @@ import { Provider } from 'react-redux';
 import App from './App';
 import store from './redux/store';
 
-const domain = process.env.REACT_APP_AUTH0_DOMAIN;
-const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
-const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
+const domain = 'dev-jbjb2jlg.us.auth0.com';
+const clientId = 'KIqoTb82c6z7Zujrmog9hDyi8P8pCzq6';
+const audience = 'https://rails-secure-api';
 
 ReactDOM.render(
   <Auth0Provider
