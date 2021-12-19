@@ -1,4 +1,4 @@
-const url = 'http://localhost:3000';
+const url = 'https://devlaps-backend.herokuapp.com';
 const usersEndpoint = `${url}/users`;
 const reviewsEndpoint = `${url}/reviews`;
 
@@ -29,7 +29,6 @@ export const postReview = (data, accesstoken) => fetch(reviewsEndpoint, {
 });
 
 export const getLaptopReviews = async (accessToken, id) => {
-  const url = 'http://localhost:3000';
   const laptopReviewsEndpoint = `${url}/reviews/${id}`;
   const response = await fetch(laptopReviewsEndpoint, {
     method: 'GET',
@@ -43,7 +42,6 @@ export const getLaptopReviews = async (accessToken, id) => {
 };
 
 export const deleteReviews = async (accessToken, id) => {
-  const url = 'http://localhost:3000';
   const laptopReviewsEndpoint = `${url}/reviews/${id}`;
   const response = await fetch(laptopReviewsEndpoint, {
     method: 'DELETE',
