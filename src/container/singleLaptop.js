@@ -2,10 +2,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
-import SingleCard from './singleCard';
+import SingleCard from '../component/singleCard';
 import { fetchDetailApi } from '../redux/actions/creator';
 import { postReview, getLaptopReviews, deleteReviews } from '../apiCall';
-import ReviewCard from './reviewCard';
+import ReviewCard from '../component/reviewCard';
 
 const SingleDetail = () => {
   const { isAuthenticated, user, getAccessTokenSilently } = useAuth0();

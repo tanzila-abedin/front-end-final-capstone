@@ -1,11 +1,10 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { useEffect, useState } from 'react';
 import { getUserReviews, deleteReviews } from '../apiCall';
-import ReviewCard from './reviewCard';
+import ReviewCard from '../component/reviewCard';
 
 const userRatingList = () => {
   const [userRating, setUserRating] = useState('');
-  console.log(userRating);
   const [removeRating, setRemoveRating] = useState(true);
   const { isAuthenticated, user, getAccessTokenSilently } = useAuth0();
 

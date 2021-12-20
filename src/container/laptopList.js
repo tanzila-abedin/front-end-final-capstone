@@ -1,11 +1,10 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchLaptopApi } from '../redux/actions/creator';
-import LaptopCard from './laptopCard';
+import LaptopCard from '../component/laptopCard';
 
 const LaptopList = () => {
   const { laptops } = useSelector((state) => state);
-  console.log(laptops);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(

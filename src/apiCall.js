@@ -1,4 +1,5 @@
-const url = 'https://devlaps-backend.herokuapp.com';
+// const url = 'https://devlaps-backend.herokuapp.com';
+const url = 'http://localhost:3000';
 const usersEndpoint = `${url}/users`;
 const reviewsEndpoint = `${url}/reviews`;
 
@@ -11,6 +12,12 @@ export const postUser = (data, accessToken) => {
     },
     body: JSON.stringify(data),
   });
+};
+
+export const getUsers = async () => {
+  const response = await fetch(usersEndpoint);
+  const users = await response.json();
+  return users;
 };
 
 export const postReview = (data, accesstoken) => fetch(reviewsEndpoint, {
