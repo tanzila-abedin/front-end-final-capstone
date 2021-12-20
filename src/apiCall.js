@@ -1,5 +1,5 @@
-// const url = 'https://devlaps-backend.herokuapp.com';
-const url = 'http://localhost:3000';
+const url = 'https://devlaps-backend.herokuapp.com';
+// const url = 'http://localhost:3000';
 const usersEndpoint = `${url}/users`;
 const reviewsEndpoint = `${url}/reviews`;
 
