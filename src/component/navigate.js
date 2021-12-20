@@ -20,19 +20,27 @@ const Navigate = () => {
     <>
       <LogoutButton />
       {' '}
-      <Link className="nav-text font-weight-normal" to="/">Home</Link>
+      <Link className="nav-text font-weight-normal" to="/"> Home</Link>
+      <Link className="nav-text font-weight-normal" to="/models">Laptops</Link>
+
       <Link to="/AllRatings">Reviews</Link>
-      <p>
+      <Link to="/">
         {' '}
-        Welcome
+        Hello
         {' '}
         {user.nickname}
-        !
-      </p>
+
+      </Link>
       {' '}
       {' '}
     </>
-  ) : <LoginButton />;
+  ) : (
+    <>
+
+      <LoginButton />
+      <Link className="nav-text font-weight-normal" to="/">Home</Link>
+    </>
+  );
 };
 
 export default Navigate;
