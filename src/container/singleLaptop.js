@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
+import ReactStars from 'react-stars';
 import SingleCard from '../component/singleCard';
 import { fetchDetailApi } from '../redux/actions/creator';
 import { postReview, getLaptopReviews, deleteReviews } from '../apiCall';
@@ -62,93 +63,123 @@ const SingleDetail = () => {
   };
 
   return (
-    <div>
+    <div className="pt-5">
       {details.detail ? (
         <>
-          <div className="pb-5">
+          <div className="d-flex  flex-row justify-content-center">
             <SingleCard laptopProp={details.detail} />
           </div>
-          <div>
-            <form onSubmit={handleSubmit}>
-              <p>
-                {' '}
-                Have an experience with
-                {' '}
-                <strong>{details.detail.name}</strong>
-                {' '}
-                ? Add your review!
-              </p>
-              <label htmlFor="userName">
-                {' '}
-                By:
-                <input
-                  id="userName"
-                  type="text"
-                  required
-                  readOnly
-                  value={user.nickname}
-                />
-              </label>
+          <div className=" d-flex flex-row justify-content-center bg-light p-5">
+            <div className="review-container">
+              {laptopReviews ? laptopReviews.map((items) => (
 
-              <label htmlFor="laptopModel">
-                {' '}
-                Model:
-                <input
-                  id="laptopModel"
-                  type="text"
-                  required
-                  readOnly
-                  value={details.detail.slug}
+                <ReviewCard
+                  key={items.id}
+                  reviewProp={items}
+                  handleDelete={handleDelete}
                 />
-              </label>
+              )) : <p>there are no reviews yet</p>}
+            </div>
+            <div className="review-form">
+              <form onSubmit={handleSubmit}>
+                <p>
+                  {' '}
+                  Have an experience with
+                  {' '}
+                  <strong>{details.detail.name}</strong>
+                  {' '}
+                  ? Rate and Review!
+                </p>
+                <div className="form-row">
+                  <div className="form-group col-md-6">
+                    <label htmlFor="userName">
+                      {' '}
+                      By:
+                      {' '}
 
-              <label htmlFor="title">
-                {' '}
-                title:
-                <input
-                  id="title"
-                  type="text"
-                  required
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                />
-              </label>
-              <label htmlFor="description">
-                Description:
-                <textarea
-                  id="description"
-                  required
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                />
-              </label>
-              <label htmlFor="rate">
-                Rate out of 5:
-                <select
-                  id="rate"
-                  value={rating}
-                  onChange={(e) => setRating(e.target.value)}
-                >
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
+                    </label>
+                    <input
+                      id="userName"
+                      type="text"
+                      required
+                      readOnly
+                      value={user.nickname}
+                    />
+                  </div>
+                  <div className="form-group col-md-6">
+                    <label htmlFor="laptopModel">
+                      {' '}
+                      Model:
+                      {' '}
 
-                </select>
-              </label>
-              <button type="submit">create review!</button>
-            </form>
-          </div>
-          <div>
-            {laptopReviews ? laptopReviews.map((items) => (
+                    </label>
+                    <input
+                      id="laptopModel"
+                      type="text"
+                      required
+                      readOnly
+                      value={details.detail.slug}
+                    />
+                  </div>
+                  <div className="form-group col-md-6">
+                    <label htmlFor="title">
+                      {' '}
+                      Title:
+                      {' '}
 
-              <ReviewCard
-                key={items.id}
-                reviewProp={items}
-                handleDelete={handleDelete}
-              />
-            )) : <p>there are no reviews yet</p>}
+                    </label>
+                    <input
+                      id="title"
+                      type="text"
+                      required
+                      value={title}
+                      onChange={(e) => setTitle(e.target.value)}
+                    />
+                  </div>
+                  <div className="form-group col-md-6">
+                    <label htmlFor="description">
+                      Description:
+                      {' '}
+
+                    </label>
+                    <textarea
+                      id="description"
+                      required
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                    />
+                  </div>
+                  <div className="form-group col-md-6">
+                    <label htmlFor="rate">
+                      Rate out of 5:
+                      {' '}
+
+                    </label>
+                    {/* <select
+                      id="rate"
+                      value={rating}
+                      onChange={(e) => setRating(e.target.value)}
+                    >
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+
+                    </select> */}
+                    <ReactStars
+                      count={5}
+                      onChange={setRating}
+                      value={rating}
+                      half={false}
+                      size={24}
+                      color2="#ffd700"
+                    />
+                  </div>
+                  <button type="submit" className=" btn bm-burger-bars all-btns  text-light">create</button>
+                </div>
+              </form>
+            </div>
           </div>
 
         </>
