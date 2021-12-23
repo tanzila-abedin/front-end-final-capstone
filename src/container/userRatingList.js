@@ -27,15 +27,16 @@ const userRatingList = () => {
   };
 
   return (
-    <div>
+    <div className="container p-5">
+      <h2 className="text-center">ALL REVIEWS</h2>
+      <p className="text-center text-muted">Find All your reviews</p>
       {userRating ? userRating.map((items) => (
-
         <ReviewCard
           key={items.id}
           reviewProp={items}
           handleDelete={handleDelete}
         />
-      )) : <p>there are no reviews yet</p>}
+      )) : <div>You Have No Reviews Yet!</div>}
     </div>
   );
 };
