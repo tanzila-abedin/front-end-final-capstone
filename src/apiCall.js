@@ -14,12 +14,6 @@ export const postUser = (data, accessToken) => {
   });
 };
 
-export const getUsers = async () => {
-  const response = await fetch(usersEndpoint);
-  const users = await response.json();
-  return users;
-};
-
 export const postReview = (data, accesstoken) => fetch(reviewsEndpoint, {
   method: 'POST',
   headers: {

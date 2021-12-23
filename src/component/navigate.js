@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { slide as Menu } from 'react-burger-menu';
 import LoginButton from '../auth0/loginButton';
 import LogoutButton from '../auth0/logoutButton';
-import { getUsers, postUser } from '../apiCall';
+import { postUser } from '../apiCall';
 
 const Navigate = () => {
   const { isAuthenticated, user, getAccessTokenSilently } = useAuth0();
@@ -14,7 +14,6 @@ const Navigate = () => {
     };
     getAccessTokenSilently().then((accessToken) => {
       postUser(userData, accessToken);
-      getUsers();
     });
   }
   return isAuthenticated ? (
