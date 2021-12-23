@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
 import { useAuth0 } from '@auth0/auth0-react';
+import ReactStars from 'react-stars';
 
 const ReviewCard = ({ reviewProp, handleDelete }) => {
   const { user } = useAuth0();
   return (
     <>
-      <div>
-        <img src={user.picture} alt="gravatar" />
-        <h4>
+      <div className="d-flex flex-row align-items-center">
+        <img src={user.picture} className="rounded-circle gravatar" alt="gravatar" />
+        <h4 className="p-1">
           {reviewProp.user_email}
           {' '}
-          created :
         </h4>
       </div>
       <p>
@@ -28,12 +28,15 @@ const ReviewCard = ({ reviewProp, handleDelete }) => {
         {' '}
         {reviewProp.description}
       </p>
-      <p>
-        rating :
-        {' '}
-        {reviewProp.rating}
-      </p>
-      {reviewProp.user_email === user.nickname && <button type="submit" onClick={() => handleDelete(reviewProp.id)}>delete review!</button> }
+      <ReactStars
+        count={5}
+        value={reviewProp.rating}
+        edit={false}
+        half={false}
+        size={24}
+        color2="#ffd700"
+      />
+      {reviewProp.user_email === user.nickname && <button type="submit" className="btn bm-burger-bars  text-light all-btns" onClick={() => handleDelete(reviewProp.id)}>remove</button> }
     </>
   );
 };
