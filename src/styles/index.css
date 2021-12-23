@@ -32,7 +32,7 @@ body {
 }
 
 .bg-color {
-  background-color: #E2E2E5;
+  background-color: #e2e2e5;
 }
 
 #App {
@@ -50,6 +50,7 @@ body {
 .bm-item {
   display: inline-block;
   padding: 10px;
+
   /* Our sidebar item styling */
   text-decoration: none;
   margin-bottom: 10px;
@@ -59,7 +60,7 @@ body {
 }
 
 .bm-item:hover {
-  background-color: #97BF19;
+  background-color: #97bf19;
   padding: 10px;
   color: white;
 }
@@ -74,7 +75,7 @@ body {
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #97BF19;
+  background: #97bf19;
 }
 
 .all-btns {
@@ -131,7 +132,7 @@ body {
 
 .jRFJkP:hover:enabled,
 .jRFJkP:focus:enabled {
-  background-color: #97BF19;
+  background-color: #97bf19;
 }
 
 .welcome-container {
