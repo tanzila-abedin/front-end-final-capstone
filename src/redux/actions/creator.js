@@ -23,7 +23,7 @@ const fetchLaptopApi = () => async (dispatch) => {
     const users = response.data;
     dispatch(fetchLaptops(users));
   } catch (error) {
-    console.log(error.message);
+    throw new Error(error.message);
   }
 };
 
@@ -34,7 +34,7 @@ const fetchDetailApi = (id) => async (dispatch) => {
     const laptopDetail = response.data;
     dispatch(fetchLaptopDetail(laptopDetail));
   } catch (error) {
-    console.log(error.message);
+    throw new Error(error.message);
   }
 };
 
