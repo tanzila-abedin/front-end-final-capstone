@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import '../styles/index.css';
 
 const LaptopCard = ({ laptopProp }) => (
-  <div>
-    <img className="w-100 mb-2" src={laptopProp.image_url} alt="laptop-card" />
-    <h5 className="text-light card-title">
+  <div className="pr-10 pl-10 pt-5 pb-5 text-center ">
+    <img className="pb-2 laptop-img" src={laptopProp.image_url} alt="laptop-card" />
+    <h5>
       {laptopProp.name}
     </h5>
-    <Link className="btn btn-warning" to={`/SingleLaptop/${laptopProp.id}`}>
-      Details
+    <Link className="btn bm-burger-bars  text-light all-btns" to={`/SingleLaptop/${laptopProp.id}`}>
+      View More
     </Link>
   </div>
 );
