@@ -4,18 +4,18 @@ import { Link } from 'react-router-dom';
 const SingleCard = ({ laptopProp }) => (
   <>
     <div>
-      <img className="w-100 mb-2" src={laptopProp.image_url} alt="laptop-card" />
-      <h5 className="text-light card-title">
-        {laptopProp.name}
-      </h5>
+      <img className="singleLaptop-img mb-2" src={laptopProp.image_url} alt="laptop-card" />
     </div>
     <div>
+      <h5>
+        {laptopProp.name}
+      </h5>
       <p>
         display:
         {' '}
         {laptopProp.display}
       </p>
-      <p>
+      <p className="bg-color">
         processor:
         {' '}
         {laptopProp.processor}
@@ -25,7 +25,7 @@ const SingleCard = ({ laptopProp }) => (
         {' '}
         {laptopProp.memory}
       </p>
-      <p>
+      <p className="bg-color">
         storage:
         {' '}
         {laptopProp.storage}
@@ -35,7 +35,7 @@ const SingleCard = ({ laptopProp }) => (
         {' '}
         {laptopProp.graphics}
       </p>
-      <p>
+      <p className="bg-color">
         operating system:
         {' '}
         {laptopProp.operating_system}
@@ -45,7 +45,7 @@ const SingleCard = ({ laptopProp }) => (
         {' '}
         {laptopProp.battery_life}
       </p>
-      <p>
+      <p className="bg-color">
         price:
         {' '}
         {laptopProp.price}
