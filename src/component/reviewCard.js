@@ -13,11 +13,11 @@ const ReviewCard = ({ reviewProp, handleDelete }) => {
           {' '}
         </h4>
       </div>
-      <p>
-        For:
+      <h6>
+
         {' '}
         {reviewProp.laptop_model}
-      </p>
+      </h6>
       <p>
         title:
         {' '}
