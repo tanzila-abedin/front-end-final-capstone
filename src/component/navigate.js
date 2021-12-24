@@ -19,25 +19,27 @@ const Navigate = () => {
   return isAuthenticated ? (
     <>
       <Menu className="overflow-hidden">
+        <h3 className="logo">DevLaps</h3>
         <h4>
           {' '}
           Hello
           {' '}
           {user.nickname}
         </h4>
-        <Link className="menu-item" to="/">HOME</Link>
-        <Link className="menu-item" to="/models">LAPTOPS</Link>
+        <Link className="menu-item item-hover" to="/">HOME</Link>
+        <Link className="menu-item item-hover" to="/models">LAPTOPS</Link>
 
-        <Link className="menu-item" to="/AllRatings">REVIEWS</Link>
+        <Link className="menu-item item-hover" to="/AllRatings">REVIEWS</Link>
         <LogoutButton className="btn btn-primary menu-item" />
       </Menu>
     </>
   ) : (
     <>
-      <Menu isOpen={false}>
+      <Menu>
+        <h3 className="logo">DevLaps</h3>
         <LoginButton className="menu-item btn all-btns" />
-        <Link className="menu-item" to="/">HOME</Link>
-        <Link className="menu-item" to="/models">LAPTOPS</Link>
+        <Link className="menu-item item-hover" to="/">HOME</Link>
+        <Link className="menu-item item-hover" to="/models">LAPTOPS</Link>
       </Menu>
     </>
   );

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pushster&family=Roboto+Slab:wght@100&display=swap');
+
 body {
   margin: 0;
   font-family:
@@ -56,10 +58,10 @@ body {
   margin-bottom: 10px;
   color: black;
   font-weight: 700;
-  transition: color 0.2s;
+  transition: color 0.3s;
 }
 
-.bm-item:hover {
+.item-hover:hover {
   background-color: #97bf19;
   padding: 10px;
   color: white;
@@ -149,4 +151,8 @@ body {
 
 .gravatar {
   width: 3rem;
+}
+
+.logo {
+  font-family: 'Pushster', cursive;
 }
