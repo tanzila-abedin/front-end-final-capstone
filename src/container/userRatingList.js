@@ -28,8 +28,8 @@ const userRatingList = () => {
 
   return (
     <div className="container p-5">
-      <h2 className="text-center">ALL REVIEWS</h2>
-      <p className="text-center text-muted">Find All your reviews</p>
+      <h2 className="text-center">REVIEWS</h2>
+      <p className="text-center text-muted">Find your shared experience here</p>
       {userRating ? userRating.map((items) => (
         <ReviewCard
           key={items.id}
