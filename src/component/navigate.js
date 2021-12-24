@@ -20,11 +20,12 @@ const Navigate = () => {
     <>
       <Menu className="overflow-hidden">
         <h3 className="logo">DevLaps</h3>
-        <h4>
+        <h4 className="nick-name">
           {' '}
           Hello
           {' '}
           {user.nickname}
+          !
         </h4>
         <Link className="menu-item item-hover" to="/">HOME</Link>
         <Link className="menu-item item-hover" to="/models">LAPTOPS</Link>
