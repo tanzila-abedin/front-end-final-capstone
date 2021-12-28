@@ -3,7 +3,7 @@ import {
   FETCH_LAPTOPS, FETCH_LAPTOP_DETAIL,
 } from './type';
 
-const host = 'https://devlaps-backend.herokuapp.com';
+const host = process.env.REACT_APP_SERVER_URL;
 // const host = 'http://localhost:3000';
 
 const fetchLaptops = (laptops) => ({
