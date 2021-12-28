@@ -27,13 +27,16 @@ const SingleDetail = () => {
   }, []);
 
   useEffect(() => {
-    if (isAuthenticated) {
-      getAccessTokenSilently()
-        .then((accessToken) => getLaptopReviews(accessToken, id))
-        .then((laptopReviews) => {
-          setLaptopReviews(laptopReviews);
-        });
+    async function getReviews() {
+      if (isAuthenticated) {
+        const token = await getAccessTokenSilently();
+        const getReviews = await getLaptopReviews(token, id);
+        const returnReviews = setLaptopReviews(getReviews);
+        return returnReviews;
+      }
+      return undefined;
     }
+    getReviews();
   }, [removeRating]);
 
   const handleSubmit = (e) => {
@@ -55,11 +58,16 @@ const SingleDetail = () => {
   };
 
   const handleDelete = (id) => {
-    if (isAuthenticated) {
-      getAccessTokenSilently()
-        .then((accessToken) => deleteReviews(accessToken, id))
-        .then(() => setRemoveRating(!removeRating));
+    async function removeReview() {
+      if (isAuthenticated) {
+        const token = await getAccessTokenSilently();
+        await deleteReviews(token, id);
+        const updateReviewList = setRemoveRating(!removeRating);
+        return updateReviewList;
+      }
+      return undefined;
     }
+    removeReview();
   };
 
   return (
