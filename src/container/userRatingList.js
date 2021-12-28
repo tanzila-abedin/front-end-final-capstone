@@ -9,21 +9,29 @@ const userRatingList = () => {
   const { isAuthenticated, user, getAccessTokenSilently } = useAuth0();
 
   useEffect(() => {
-    if (isAuthenticated) {
-      getAccessTokenSilently()
-        .then((accessToken) => getUserReviews(accessToken, user.sub))
-        .then((userReviews) => {
-          setUserRating(userReviews);
-        });
+    async function getReviews() {
+      if (isAuthenticated) {
+        const token = await getAccessTokenSilently();
+        const userReviews = await getUserReviews(token, user.sub);
+        const updateReviews = setUserRating(userReviews);
+        return updateReviews;
+      }
+      return undefined;
     }
+    getReviews();
   }, [removeRating]);
 
   const handleDelete = (id) => {
-    if (isAuthenticated) {
-      getAccessTokenSilently()
-        .then((accessToken) => deleteReviews(accessToken, id))
-        .then(() => setRemoveRating(!removeRating));
+    async function removeReview() {
+      if (isAuthenticated) {
+        const token = await getAccessTokenSilently();
+        await deleteReviews(token, id);
+        const updateReviewList = setRemoveRating(!removeRating);
+        return updateReviewList;
+      }
+      return undefined;
     }
+    removeReview();
   };
 
   return (
