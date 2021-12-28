@@ -4,7 +4,6 @@ import {
 } from './type';
 
 const host = process.env.REACT_APP_SERVER_URL;
-// const host = 'http://localhost:3000';
 
 const fetchLaptops = (laptops) => ({
   type: FETCH_LAPTOPS,

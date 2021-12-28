@@ -1,5 +1,4 @@
 const url = process.env.REACT_APP_SERVER_URL;
-// const url = 'http://localhost:3000';
 
 const usersEndpoint = `${url}/users`;
 const reviewsEndpoint = `${url}/reviews`;
