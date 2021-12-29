@@ -1,5 +1,4 @@
 const url = process.env.REACT_APP_SERVER_URL;
-
 const usersEndpoint = `${url}/users`;
 const reviewsEndpoint = `${url}/reviews`;
 
