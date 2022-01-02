@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Pushster&family=Roboto+Slab:wght@100&display=swap');
+
+body {
+  margin: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Courier New',
+    monospace;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+.bg-color {
+  background-color: #e2e2e5;
+}
+
+#App {
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+#page-wrap {
+  text-align: center;
+  overflow: auto;
+  top: 45%;
+  position: relative;
+}
+
+.bm-item {
+  display: inline-block;
+  padding: 10px;
+
+  /* Our sidebar item styling */
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: black;
+  font-weight: 700;
+  transition: color 0.3s;
+}
+
+.item-hover:hover {
+  background-color: #97bf19;
+  padding: 10px;
+  color: white;
+}
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #97bf19;
+}
+
+.all-btns {
+  width: 10rem;
+  border-radius: 20px;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: white;
+  padding: 2.5em 1.2em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: black;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* ######################################################### */
+
+.card {
+  width: 25rem;
+}
+
+.laptop-img {
+  height: 15rem;
+}
+
+.singleLaptop-img {
+  height: 20rem;
+}
+
+.jRFJkP:hover:enabled,
+.jRFJkP:focus:enabled {
+  background-color: #97bf19;
+}
+
+.welcome-container {
+  padding-top: 20%;
+}
+
+.review-container {
+  padding-left: 7rem;
+}
+
+.review-form {
+  padding-left: 17rem;
+}
+
+.gravatar {
+  width: 3rem;
+}
+
+.logo {
+  font-family: 'Pushster', cursive;
+}
+
+.nick-name {
+  font-family: 'Roboto Slab', serif;
+}

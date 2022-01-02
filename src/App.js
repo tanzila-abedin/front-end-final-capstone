@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import LaptopList from './container/laptopList';
+import Navigate from './component/navigate';
+import ProtectedRoute from './auth0/protectedRoute';
+import SingleLaptop from './container/singleLaptop';
+import userRatingList from './container/userRatingList';
+import Welcome from './component/welcome';
+import './styles/index.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter id="app">
+      <Navigate pageWrapId="page-wrap" outerContainerId="app" />
+      <Switch id="page-wrap">
+        <Route exact path="/" component={Welcome} />
+        <Route exact path="/models" component={LaptopList} />
+        <ProtectedRoute path="/singleLaptop/:id" component={SingleLaptop} />
+        <ProtectedRoute path="/AllRatings" component={userRatingList} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
